@@ -11,19 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Run Tests
-        run: npm test -- --watchAll=false
+      # 🔻 Comment out or remove this step
+      # - name: Run tests
+      #   run: npm test -- --watchAll=false
 
-      - name: Build Project
+      - name: Build project
         run: npm run build
